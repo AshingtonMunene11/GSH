@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select"; // assuming you have a Select component
+import { Select } from "@/components/ui/select";
 
 export default function CreateProductModal({ onClose, onSave, categories = [] }) {
   const [formData, setFormData] = useState({
