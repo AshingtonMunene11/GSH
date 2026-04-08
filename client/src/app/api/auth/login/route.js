@@ -12,8 +12,14 @@ export async function POST(req) {
     return Response.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
-  const valid = await bcrypt.compare(password, ADMIN_HASH);
-  if (!valid) {
+  // TEMPORARY BYPASS: comment out bcrypt check
+  // const valid = await bcrypt.compare(password, ADMIN_HASH);
+  // if (!valid) {
+  //   return Response.json({ error: "Invalid credentials" }, { status: 401 });
+  // }
+
+  // Instead, just accept the password directly for now
+  if (password !== process.env.ADMIN_PASSWORD) {
     return Response.json({ error: "Invalid credentials" }, { status: 401 });
   }
 

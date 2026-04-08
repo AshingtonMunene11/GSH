@@ -59,12 +59,12 @@ export default function Navbar() {
           {/* Right-side actions */}
           <div className="flex items-center space-x-4">
             {/* Search bar */}
-            <div className="hidden md:flex items-center relative hover:text-[#f4821f]">
+            <div className="hidden md:flex items-center relative hover:text-white">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
               <Input
                 type="search"
                 placeholder="Search products..."
-                className="pl-9 pr-4 w-64 hover:text-[#f4821f]"
+                className="pl-9 pr-4 w-64 text-white hover:text-[#f4821f]"
               />
             </div>
 
