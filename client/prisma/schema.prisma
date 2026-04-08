@@ -1,0 +1,30 @@
+datasource db {
+  provider = "postgresql"   // or mysql/sqlite depending on your DB
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id               Int      @id @default(autoincrement())
+  name             String
+  description      String?
+  price            Decimal  @db.Decimal(10, 2)
+  original_price   Decimal? @db.Decimal(10, 2)
+  stock_available  Int
+  category         String
+  image_url1       String?
+  image_url2       String?
+  image_url3       String?
+  image_url4       String?
+  long_description String?
+  short_description String?
+  color            String?
+  size_variation   String?
+  cross_up_sell1   Int?
+  featured         Boolean  @default(false)
+  rating           Decimal? @db.Decimal(2, 1)
+  reviews_count    Int?
+}
