@@ -9,12 +9,12 @@ export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // For creating new orders
+  // New order form
   const [newCustomer, setNewCustomer] = useState("");
   const [newStatus, setNewStatus] = useState("");
   const [newTotal, setNewTotal] = useState("");
 
-  // For editing existing orders
+  // Editing state
   const [editingOrder, setEditingOrder] = useState(null);
   const [editStatus, setEditStatus] = useState("");
 
@@ -33,7 +33,7 @@ export default function OrdersPage() {
     fetchOrders();
   }, []);
 
-  // Create new order
+  // Create
   const handleCreate = async () => {
     if (!newCustomer || !newStatus || !newTotal) return;
     const res = await fetch("/api/orders", {
@@ -52,13 +52,13 @@ export default function OrdersPage() {
     setNewTotal("");
   };
 
-  // Delete order
+  // Delete
   const handleDelete = async (id) => {
     await fetch(`/api/orders?id=${id}`, { method: "DELETE" });
     setOrders((prev) => prev.filter((o) => o.id !== id));
   };
 
-  // Update order status
+  // Update
   const handleUpdate = async (id) => {
     await fetch("/api/orders", {
       method: "PUT",
@@ -140,10 +140,7 @@ export default function OrdersPage() {
                   <td className="p-2 flex gap-2">
                     {editingOrder === order.id ? (
                       <>
-                        <Button
-                          size="sm"
-                          onClick={() => handleUpdate(order.id)}
-                        >
+                        <Button size="sm" onClick={() => handleUpdate(order.id)}>
                           Save
                         </Button>
                         <Button
