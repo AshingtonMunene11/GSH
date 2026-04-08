@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 
 export async function GET(req, context) {
-  const { id } = context.params;  
+  const { id } = context.params;
 
   console.log("Incoming params:", context.params);
 
