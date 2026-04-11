@@ -1,6 +1,10 @@
-export async function GET() {
+cexport async function GET() {
   return Response.json({
     message: "About API endpoint",
     status: "ok",
   });
 }
+
+
+
+// jjj
