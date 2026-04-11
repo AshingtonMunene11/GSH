@@ -1,4 +1,4 @@
-cexport async function GET() {
+export async function GET() {
   return Response.json({
     message: "About API endpoint",
     status: "ok",
