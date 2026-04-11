@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function HeroSection({ banners }) {
-  const categories = [
+ const categories = [
     "Baby Products",
     "Batteries & Power Backup",
     "Beauty & Salon",
@@ -66,7 +66,7 @@ export default function HeroSection({ banners }) {
           {categories.map((cat, i) => (
             <button
               key={i}
-              className="w-full text-left px-3 py-2 rounded text-white hover:bg-[#f4821f] transition-colors cursor-pointer"
+              className="w-full text-left px-3 py-2 rounded text-white hover:bg-white/20 transition-colors cursor-pointer"
             >
               {cat}
             </button>
@@ -92,7 +92,7 @@ export default function HeroSection({ banners }) {
                 src={src}
                 alt={`Banner ${index}`}
                 width={1200}
-                height={400}
+                height={600}
                 className="object-contain rounded-lg transform transition-transform duration-500 hover:scale-105"
               />
             </div>
