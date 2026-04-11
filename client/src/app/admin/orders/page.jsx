@@ -6,6 +6,7 @@ export default function OrdersPage() {
     </div>
   );
 }
+
 // ??llllllllllll
 // "use client";
 
@@ -14,7 +15,7 @@ export default function OrdersPage() {
 // import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
 
-// export default function OrdersPage() {
+//function OrdersPage() {
 //   const [orders, setOrders] = useState([]);
 //   const [loading, setLoading] = useState(true);
 
