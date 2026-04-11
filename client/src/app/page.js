@@ -1,12 +1,19 @@
+import fs from "fs";
+import path from "path";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
+  // Read all files inside /public/banners
+  const bannersDir = path.join(process.cwd(), "public", "banners");
+  const files = fs.readdirSync(bannersDir);
+
+  // Build public paths for each image
+  const banners = files.map((file) => `/banners/${file}`);
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <main className="flex-grow">
-        <h1 className="text-3xl font-bold p-8 text-gray-900">Welcome to Giddy Sports Hub</h1>
-        <p className="px-8 text-gray-700">
-          Explore our new sports selections.
-        </p>
+        <HeroSection banners={banners} />
       </main>
     </div>
   );

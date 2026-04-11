@@ -24,3 +24,44 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 30s linear infinite; /* slower speed */
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;  /* no track */
+}
+
+/* Show thin orange scrollbar on hover */
+.custom-scrollbar:hover {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #f4821f transparent;
+}
+.custom-scrollbar:hover::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar:hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #f4821f;
+  border-radius: 9999px;
+}

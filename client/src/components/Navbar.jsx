@@ -8,9 +8,10 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useState } from "react";
 import AdminLoginModal from "@/components/AdminLoginModal";
+import TopLine from "@/components/ui/TopLine";
 
 export default function Navbar() {
-  const { count } = useCart(); // total number of items picked
+  const { count } = useCart();
   const [showLogin, setShowLogin] = useState(false);
 
   return (
@@ -18,6 +19,9 @@ export default function Navbar() {
       className="sticky top-0 z-50 w-full border-b"
       style={{ backgroundColor: "#126936" }}
     >
+      {/* TopLine sits at the very top of the navbar */}
+      <TopLine />
+
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -36,22 +40,13 @@ export default function Navbar() {
 
           {/* Navigation links */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link
-              href="/"
-              className="text-sm hover:text-[#f4821f] transition-colors"
-            >
+            <Link href="/" className="text-sm hover:text-[#f4821f] transition-colors">
               Home
             </Link>
-            <Link
-              href="/products"
-              className="text-sm hover:text-[#f4821f] transition-colors"
-            >
+            <Link href="/products" className="text-sm hover:text-[#f4821f] transition-colors">
               Shop
             </Link>
-            <Link
-              href="/about"
-              className="text-sm hover:text-[#f4821f] transition-colors"
-            >
+            <Link href="/about" className="text-sm hover:text-[#f4821f] transition-colors">
               About
             </Link>
           </nav>
