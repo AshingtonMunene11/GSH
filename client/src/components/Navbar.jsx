@@ -46,7 +46,7 @@ export default function Navbar() {
             <Link href="/products" className="text-sm hover:text-[#f4821f] transition-colors">
               Shop
             </Link>
-            <Link href="/about" className="text-sm hover:text-[#f4821f] transition-colors">
+            <Link href="/#about" scroll={false} className="text-sm hover:text-[#f4821f] transition-colors">
               About
             </Link>
           </nav>

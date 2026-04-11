@@ -18,10 +18,9 @@ export default function HeroSection({ banners }) {
     "Sports Equipment (General)",
   ];
 
-  const [current, setCurrent] = useState(1); // start at first "real" slide
+  const [current, setCurrent] = useState(1); 
   const [transitioning, setTransitioning] = useState(true);
 
-  // Duplicate first and last slides for seamless loop
   const extendedBanners = [
     banners[banners.length - 1],
     ...banners,
@@ -56,7 +55,7 @@ export default function HeroSection({ banners }) {
   return (
     <section className="flex w-full mt-5 gap-4 px-4 flex-col md:flex-row h-[400px]">
       {/* Sidebar */}
-      <aside className="md:w-1/4 w-full bg-[#126936] rounded-lg p-4 flex flex-col h-full">
+      <aside className="md:w-1/4 w-full bg-gradient-to-br from-[#126936] to-[#0f4d28] rounded-lg p-4 flex flex-col h-full">
         <h2 className="font-bold text-white flex-shrink-0 pb-2 border-b border-white/40">
           Product Categories
         </h2>
