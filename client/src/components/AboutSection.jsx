@@ -52,10 +52,10 @@ export default function AboutSection() {
               " bg-white text-green-700 z-20 scale-105 animate-zoom-tilt animate-fade";
           } else if (position === 1) {
             classes +=
-              " bg-green-600 text-white blur-[1px] opacity-80 translate-x-12 rotate-6 z-10 scale-95 animate-fade";
+              " bg-[#126936] text-white blur-[1px] opacity-80 translate-x-12 rotate-6 z-10 scale-95 animate-fade";
           } else {
             classes +=
-              " bg-green-600 text-white blur-[1px] opacity-80 -translate-x-12 -rotate-6 z-10 scale-95 animate-fade";
+              " bg-[#f4821f] text-white blur-[1px] opacity-80 -translate-x-12 -rotate-6 z-10 scale-95 animate-fade";
           }
 
           return (
