@@ -30,14 +30,17 @@ body {
   0% {
     transform: translateX(100%);
   }
+  90% {
+    transform: translateX(-100%); /* finish scroll */
+  }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-100%); /* hold at end */
   }
 }
 
 .animate-marquee {
   display: inline-flex;
-  animation: marquee 30s linear infinite; /* slower speed */
+  animation: marquee 45s linear infinite; /* 40s scroll + 5s pause */
 }
 
 /* Custom Scrollbar */

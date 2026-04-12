@@ -1,8 +1,10 @@
 export default function TopLine() {
   const messages = [
     { text: "Welcome to Giddy Sports Hub — Great deals every day!", color: "green" },
+    { text: "We deal with all Sports equipment at wholesale price. ", color: "green" },
     { text: "Visit our shop at Accra Road, Superior Arcade, Mezzanine Floor!", color: "green" },
     { text: "Checkout our sales offer and grab massive discounts NOW!!", color: "green" },
+    { text: "Got Questions ? Contact us through: +254 724 771611 ", color: "green" },
   ];
 
   return (
