@@ -5,8 +5,8 @@
     "name": "Nike Phantom GX Academy MG",
     "short_description": "Precision football boots.",
     "long_description": "Designed for precise players, features an expanded touch zone.",
-    "offer_price": 8500,
-    "original_price": 9500,
+    "offer_price": 8500.0,
+    "original_price": 9500.0,
     "stock_available": 16,
     "category": "Team Sports",
     "sub_category": "Football",
@@ -20,8 +20,15 @@
     ],
     "color": "Black/Blue",
     "brand": "Nike",
-    "size_variation": ["40","41","42","43","44","45"],
-    "related_products": true,
+    "size_variation": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "related_products": false,
     "featured": true,
     "rating": 4.4,
     "reviews_count": 162
@@ -32,8 +39,8 @@
     "name": "Adidas 23/24 Arsenal Home Jersey",
     "short_description": "Official Arsenal Home Jersey.",
     "long_description": "Authentic Arsenal home kit for the 23/24 season.",
-    "offer_price": 3500,
-    "original_price": 4500,
+    "offer_price": 3500.0,
+    "original_price": 4500.0,
     "stock_available": 35,
     "category": "Team Sports",
     "sub_category": "Football",
@@ -46,8 +53,10 @@
     ],
     "color": "Standard",
     "brand": "Generic",
-    "size_variation": ["Standard"],
-    "related_products": true,
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
     "featured": true,
     "rating": 4.7,
     "reviews_count": 164
@@ -58,8 +67,8 @@
     "name": "Nike Pitch Training Football",
     "short_description": "Durable training ball.",
     "long_description": "High-contrast graphics for visibility.",
-    "offer_price": 2200,
-    "original_price": 2800,
+    "offer_price": 2200.0,
+    "original_price": 2800.0,
     "stock_available": 8,
     "category": "Team Sports",
     "sub_category": "Football",
@@ -70,7 +79,9 @@
     ],
     "color": "Standard",
     "brand": "Generic",
-    "size_variation": ["Standard"],
+    "size_variation": [
+      "Standard"
+    ],
     "related_products": false,
     "featured": false,
     "rating": 4.5,
@@ -82,8 +93,8 @@
     "name": "Kipsta F500 Shin Guards",
     "short_description": "Protective gear for players.",
     "long_description": "Hard shell protection with foam backing.",
-    "offer_price": 1200,
-    "original_price": 1500,
+    "offer_price": 1200.0,
+    "original_price": 1500.0,
     "stock_available": 37,
     "category": "Team Sports",
     "sub_category": "Football",
@@ -94,10 +105,678 @@
     ],
     "color": "Standard",
     "brand": "Generic",
-    "size_variation": ["Standard"],
+    "size_variation": [
+      "Standard"
+    ],
     "related_products": false,
     "featured": false,
     "rating": 4.5,
     "reviews_count": 45
+  },
+  {
+    "id": 5,
+    "sku": "Adidas Predator Goalie Gloves",
+    "name": "Adidas Predator Goalie Gloves",
+    "short_description": "Grip-focused goalie gloves.",
+    "long_description": "Soft Grip Pro foam palm for better handling.",
+    "offer_price": 2500.0,
+    "original_price": 3200.0,
+    "stock_available": 30,
+    "category": "Team Sports",
+    "sub_category": "Football",
+    "sub_subcategory": "Goalkeeping",
+    "images": [
+      "https://images-na.ssl-images-amazon.com/images/I/51ieyNcQjgS.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58JBrrFUu7NbLYhcRtKkreNxmBlcbDhLowg&s"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.8,
+    "reviews_count": 49
+  },
+  {
+    "id": 6,
+    "sku": "Kipsta Football Goal Net 1.8m",
+    "name": "Kipsta Football Goal Net 1.8m",
+    "short_description": "Portable practice goal.",
+    "long_description": "Fiberglass frame with high-quality netting.",
+    "offer_price": 4500.0,
+    "original_price": 5500.0,
+    "stock_available": 18,
+    "category": "Team Sports",
+    "sub_category": "Football",
+    "sub_subcategory": "Training Gear",
+    "images": [
+      "https://contents.mediadecathlon.com/p2769167/k$64b7efd00c433ac755e091640ca9bf4f/picture.jpg?format=auto&f=3000x0",
+      "https://contents.mediadecathlon.com/p2813441/sq/k$5ef5585fa20d7120317eefb02a9ba2ee/s-%E8%99%9F%E8%B6%B3%E7%90%83%E7%90%83%E9%96%80-95-cm-x-70-cm-classic-%E7%99%BD%E8%89%B2-kipsta-8881581.jpg?f=480x480&format=auto"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.5,
+    "reviews_count": 78
+  },
+  {
+    "id": 7,
+    "sku": "Puma Football Shorts",
+    "name": "Puma Football Shorts",
+    "short_description": "Lightweight match shorts.",
+    "long_description": "Breathable fabric with moisture-wicking technology.",
+    "offer_price": 1500.0,
+    "original_price": 2000.0,
+    "stock_available": 48,
+    "category": "Team Sports",
+    "sub_category": "Football",
+    "sub_subcategory": "Apparel",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9KKf47RtoDrE_R56hUcumIdNtNSba_z-9A&s",
+      "https://thumblr.uniid.it/product/337122/4b2c5a8aefa3.jpg?width=3840&format=webp&q=75"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.4,
+    "reviews_count": 45
+  },
+  {
+    "id": 8,
+    "sku": "Nike Mercurial Superfly 9 Academy",
+    "name": "Nike Mercurial Superfly 9 Academy",
+    "short_description": "High-speed football boots.",
+    "long_description": "Features a Zoom Air unit for explosive speed.",
+    "offer_price": 9500.0,
+    "original_price": 11000.0,
+    "stock_available": 45,
+    "category": "Team Sports",
+    "sub_category": "Football",
+    "sub_subcategory": "Boots",
+    "images": [
+      "https://thumblr.uniid.it/product/266599/284ceab2d14f.jpg?width=3840&format=webp&q=75"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.6,
+    "reviews_count": 60
+  },
+  {
+    "id": 9,
+    "sku": "Gilbert G-TR4000 Rugby Ball",
+    "name": "Gilbert G-TR4000 Rugby Ball",
+    "short_description": "Durable training rugby ball.",
+    "long_description": "Durable training rugby ball.",
+    "offer_price": 3500.0,
+    "original_price": 4200.0,
+    "stock_available": 24,
+    "category": "Team Sports",
+    "sub_category": "Rugby",
+    "sub_subcategory": "Balls",
+    "images": [
+      "https://nairobisportshouse.com/media/products/2022/10/0560000079.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcHMWGEBh3JXBWczclJgT3rwA5ok302BwUrg&s"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.2,
+    "reviews_count": 111
+  },
+  {
+    "id": 10,
+    "sku": "Spalding NBA Silver Basketball",
+    "name": "Spalding NBA Silver Basketball",
+    "short_description": "Indoor/outdoor basketball.",
+    "long_description": "Indoor/outdoor basketball.",
+    "offer_price": 4800.0,
+    "original_price": 5500.0,
+    "stock_available": 12,
+    "category": "Team Sports",
+    "sub_category": "Basketball",
+    "sub_subcategory": "Balls",
+    "images": [
+      "https://cdn.ecommercedns.uk/files/0/249970/1/28255941/spalding-nba-silver-indoor-outdoor-match-ball-size-7--3064-p.jpg",
+      "https://dawsonsportsme.com/cdn/shop/products/spalding-nba-silver-outdoor.jpg?v=1585740242&width=1000"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.8,
+    "reviews_count": 175
+  },
+  {
+    "id": 11,
+    "sku": "Mikasa MVA300 Volleyball",
+    "name": "Mikasa MVA300 Volleyball",
+    "short_description": "Official competition volleyball.",
+    "long_description": "Official competition volleyball.",
+    "offer_price": 5500.0,
+    "original_price": 6500.0,
+    "stock_available": 12,
+    "category": "Team Sports",
+    "sub_category": "Volleyball",
+    "sub_subcategory": "Balls",
+    "images": [
+      "https://m.media-amazon.com/images/I/61Aq9Ya9IfL.jpg",
+      "https://m.media-amazon.com/images/I/61lvS4rnYaL._AC_UF894,1000_QL80_.jpg"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.3,
+    "reviews_count": 154
+  },
+  {
+    "id": 12,
+    "sku": "Cast Iron Dumbbell Set 20kg",
+    "name": "Cast Iron Dumbbell Set 20kg",
+    "short_description": "Adjustable weights.",
+    "long_description": "Adjustable weights.",
+    "offer_price": 6500.0,
+    "original_price": 7500.0,
+    "stock_available": 18,
+    "category": "Gym & Fitness",
+    "sub_category": "Strength",
+    "sub_subcategory": "Weights",
+    "images": [
+      "https://m.media-amazon.com/images/I/61Aq9Ya9IfL.jpg",
+      "https://i1.wp.com/www.alphafitness.co.ke/wp-content/uploads/2020/09/800_600_1542009461_product_12112018132741.jpg?resize=300%2C300&ssl=1"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.9,
+    "reviews_count": 94
+  },
+  {
+    "id": 13,
+    "sku": "Yoga Mat 6mm Non-Slip",
+    "name": "Yoga Mat 6mm Non-Slip",
+    "short_description": "Cushioned fitness mat.",
+    "long_description": "Cushioned fitness mat.",
+    "offer_price": 2500.0,
+    "original_price": 3000.0,
+    "stock_available": 32,
+    "category": "Gym & Fitness",
+    "sub_category": "Yoga",
+    "sub_subcategory": "Mats",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlTseYQgYcywDZpJFHL_txST61U8V8ZYJNJA&s",
+      "https://content.physioroom.com/images/products/21512/21512_main.png?width=750"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.5,
+    "reviews_count": 179
+  },
+  {
+    "id": 14,
+    "sku": "Nike Air Zoom Pegasus 40",
+    "name": "Nike Air Zoom Pegasus 40",
+    "short_description": "Responsive running shoes.",
+    "long_description": "Responsive running shoes.",
+    "offer_price": 12500.0,
+    "original_price": 14500.0,
+    "stock_available": 38,
+    "category": "Athletics & Running",
+    "sub_category": "Shoes",
+    "sub_subcategory": "Running",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAzpMDqsSqN1o-e_KZfrqTCn2lWJZTE1ZCcQ&s",
+      "https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto/8076d4ae-6693-46dd-a66f-fbc9ab86641f/NIKE+AIR+ZOOM+PEGASUS+40+PR+GS.png"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.0,
+    "reviews_count": 39
+  },
+  {
+    "id": 15,
+    "sku": "Garmin Forerunner 55",
+    "name": "Garmin Forerunner 55",
+    "short_description": "GPS Running Watch.",
+    "long_description": "GPS Running Watch.",
+    "offer_price": 28000.0,
+    "original_price": 32000.0,
+    "stock_available": 20,
+    "category": "Athletics & Running",
+    "sub_category": "Electronics",
+    "sub_subcategory": "Watches",
+    "images": [
+      "https://garminkenya.com/wp-content/uploads/2021/08/forerunner-55.jpg",
+      "https://ph.garmin.com/m/ph/g/products/forerunner-55-blue-cf-lg.jpg"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.7,
+    "reviews_count": 123
+  },
+  {
+    "id": 16,
+    "sku": "Wilson Federer Tennis Racket",
+    "name": "Wilson Federer Tennis Racket",
+    "short_description": "Amateur tennis racket.",
+    "long_description": "Amateur tennis racket.",
+    "offer_price": 6800.0,
+    "original_price": 8000.0,
+    "stock_available": 17,
+    "category": "Racket Sports",
+    "sub_category": "Tennis",
+    "sub_subcategory": "Rackets",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQazEqFWYZP-sb7goDzUWp4yHr3YPn2HW2pOA&s",
+      "https://mma.prnewswire.com/media/2477853/Wilson_Sporting_Goods_and_Roger_Federer_Unveil_The_RF_Collection.jpg?w=300"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.8,
+    "reviews_count": 48
+  },
+  {
+    "id": 17,
+    "sku": "YONEX Nanoray Badminton Racket",
+    "name": "YONEX Nanoray Badminton Racket",
+    "short_description": "Lightweight racket.",
+    "long_description": "Lightweight racket.",
+    "offer_price": 3500.0,
+    "original_price": 4200.0,
+    "stock_available": 33,
+    "category": "Racket Sports",
+    "sub_category": "Badminton",
+    "sub_subcategory": "Rackets",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUlnj0DvILakWs7VPeMONFbyOV6M8FS5ML8Q&s",
+      "https://www.khelmart.com/pub/media/catalog/product/cache/712b931dac1b924a11d1b7282ad89910/1/_/1_112.jpg"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.6,
+    "reviews_count": 18
+  },
+  {
+    "id": 18,
+    "sku": "Speedo Biofuse 2.0 Goggles",
+    "name": "Speedo Biofuse 2.0 Goggles",
+    "short_description": "Comfortable swim goggles.",
+    "long_description": "Comfortable swim goggles.",
+    "offer_price": 2800.0,
+    "original_price": 3500.0,
+    "stock_available": 14,
+    "category": "Swimming",
+    "sub_category": "Eyewear",
+    "sub_subcategory": "Goggles",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT69KKWK-7PzZU1nxxyn9HqyPvBFhYVhK-iwQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT69KKWK-7PzZU1nxxyn9HqyPvBFhYVhK-iwQ&s"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.5,
+    "reviews_count": 113
+  },
+  {
+    "id": 19,
+    "sku": "Microfiber Quick-Dry Towel",
+    "name": "Microfiber Quick-Dry Towel",
+    "short_description": "Absorbent sports towel.",
+    "long_description": "Absorbent sports towel.",
+    "offer_price": 1500.0,
+    "original_price": 2000.0,
+    "stock_available": 41,
+    "category": "Swimming",
+    "sub_category": "Accessories",
+    "sub_subcategory": "Towels",
+    "images": [
+      "https://nordace.com/wp-content/uploads/2020/06/quick-dry-towel-blue-4.jpg",
+      "https://m.media-amazon.com/images/I/81DalsSE59L.jpg"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.6,
+    "reviews_count": 195
+  },
+  {
+    "id": 20,
+    "sku": "Everlast Boxing Gloves 12oz",
+    "name": "Everlast Boxing Gloves 12oz",
+    "short_description": "Training boxing gloves.",
+    "long_description": "Training boxing gloves.",
+    "offer_price": 4200.0,
+    "original_price": 5000.0,
+    "stock_available": 19,
+    "category": "Combat Sports",
+    "sub_category": "Boxing",
+    "sub_subcategory": "Gloves",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyAmuTIMHl6FJ0rmWGAX6DWa1WUP5VK4PuXg&s"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.9,
+    "reviews_count": 31
+  },
+  {
+    "id": 21,
+    "sku": "Punching Bag 4ft Unfilled",
+    "name": "Punching Bag 4ft Unfilled",
+    "short_description": "Heavy duty punching bag.",
+    "long_description": "Heavy duty punching bag.",
+    "offer_price": 5500.0,
+    "original_price": 7000.0,
+    "stock_available": 28,
+    "category": "Combat Sports",
+    "sub_category": "Boxing",
+    "sub_subcategory": "Bags",
+    "images": [
+      "https://xn8sports.co.uk/cdn/shop/products/XN8-Unfilled-Punch-bag-4ft-5ft-Boxing-Punching-Kickboxing-Grappling-MMA-Martial-Arts-Muay-Thai-4FT-5FT-Blue-1.png?v=1655733825&width=1080"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.2,
+    "reviews_count": 45
+  },
+  {
+    "id": 22,
+    "sku": "Men's Compression Tights",
+    "name": "Men's Compression Tights",
+    "short_description": "Performance base layer.",
+    "long_description": "Performance base layer.",
+    "offer_price": 2200.0,
+    "original_price": 3000.0,
+    "stock_available": 24,
+    "category": "Sports Apparel",
+    "sub_category": "Men",
+    "sub_subcategory": "Compression",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiUFTNkVzwflL_9hAU6zFoIa2Ig8TJXqoYEQ&s"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.8,
+    "reviews_count": 78
+  },
+  {
+    "id": 23,
+    "sku": "Dry-Fit Training T-Shirt",
+    "name": "Dry-Fit Training T-Shirt",
+    "short_description": "Breathable gym shirt.",
+    "long_description": "Breathable gym shirt.",
+    "offer_price": 1200.0,
+    "original_price": 1800.0,
+    "stock_available": 17,
+    "category": "Sports Apparel",
+    "sub_category": "Unisex",
+    "sub_subcategory": "T-Shirts",
+    "images": [
+      "https://i0.wp.com/kingscollection.co.ke/wp-content/uploads/2023/02/209.png?fit=1890%2C1890&ssl=1",
+      "https://images.bike24.com/i/mb/e8/64/12/303862-00-d-622534.jpg"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.9,
+    "reviews_count": 111
+  },
+  {
+    "id": 24,
+    "sku": "Sports Water Bottle 1000ml",
+    "name": "Sports Water Bottle 1000ml",
+    "short_description": "Large hydration bottle.",
+    "long_description": "Large hydration bottle.",
+    "offer_price": 1200.0,
+    "original_price": 1500.0,
+    "stock_available": 26,
+    "category": "Sports Accessories",
+    "sub_category": "Hydration",
+    "sub_subcategory": "Bottles",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ojsq6kNvQOVxZNhB9wNiMd63NkTGjKaH0w&s"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.2,
+    "reviews_count": 19
+  },
+  {
+    "id": 25,
+    "sku": "Whey Protein Isolate 2kg",
+    "name": "Whey Protein Isolate 2kg",
+    "short_description": "Muscle recovery supplement.",
+    "long_description": "Muscle recovery supplement.",
+    "offer_price": 8500.0,
+    "original_price": 10000.0,
+    "stock_available": 38,
+    "category": "Sports Accessories",
+    "sub_category": "Nutrition",
+    "sub_subcategory": "Supplements",
+    "images": [
+      "https://scitecnutrition.com/images/product_images/15863_c6e001fc434c.webp"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.1,
+    "reviews_count": 144
+  },
+  {
+    "id": 26,
+    "sku": "Quechua Arpenaz 10L Backpack",
+    "name": "Quechua Arpenaz 10L Backpack",
+    "short_description": "Day hike/gym backpack.",
+    "long_description": "Day hike/gym backpack.",
+    "offer_price": 950.0,
+    "original_price": 1200.0,
+    "stock_available": 34,
+    "category": "Sports Accessories",
+    "sub_category": "Bags",
+    "sub_subcategory": "Backpacks",
+    "images": [
+      "https://www.stepinadventure.com/cdn/shop/files/QuechuaArpenaz10Backpack-black.webp?v=1721728653"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.2,
+    "reviews_count": 173
+  },
+  {
+    "id": 27,
+    "sku": "Hand Grip Strengthener",
+    "name": "Hand Grip Strengthener",
+    "short_description": "Forearm training device.",
+    "long_description": "Forearm training device.",
+    "offer_price": 700.0,
+    "original_price": 1000.0,
+    "stock_available": 29,
+    "category": "Sports Accessories",
+    "sub_category": "Fitness Gear",
+    "sub_subcategory": "Training",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPvzPwzq1zEIweWLtsVITEggKCLXhWkZUlxQ&s"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.6,
+    "reviews_count": 44
+  },
+  {
+    "id": 28,
+    "sku": "Resistance Bands Set",
+    "name": "Resistance Bands Set",
+    "short_description": "5 levels of resistance.",
+    "long_description": "5 levels of resistance.",
+    "offer_price": 1500.0,
+    "original_price": 2000.0,
+    "stock_available": 32,
+    "category": "Gym & Fitness",
+    "sub_category": "Equipment",
+    "sub_subcategory": "Bands",
+    "images": [
+      "https://images-na.ssl-images-amazon.com/images/I/61jI-MIOlzL._UL500_.jpg"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": true,
+    "rating": 4.4,
+    "reviews_count": 66
+  },
+  {
+    "id": 29,
+    "sku": "Knee Support Sleeve",
+    "name": "Knee Support Sleeve",
+    "short_description": "Compression knee brace.",
+    "long_description": "Compression knee brace.",
+    "offer_price": 1200.0,
+    "original_price": 1800.0,
+    "stock_available": 35,
+    "category": "Sports Accessories",
+    "sub_category": "Recovery",
+    "sub_subcategory": "Supports",
+    "images": [
+      "https://nairomarket.co.ke/cdn/shop/files/tvw1G0ur3S.jpg?v=1726285800"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.2,
+    "reviews_count": 59
+  },
+  {
+    "id": 30,
+    "sku": "Whistle with Lanyard",
+    "name": "Whistle with Lanyard",
+    "short_description": "Referee/Coach whistle.",
+    "long_description": "Referee/Coach whistle.",
+    "offer_price": 300.0,
+    "original_price": 500.0,
+    "stock_available": 36,
+    "category": "Team Sports",
+    "sub_category": "Accessories",
+    "sub_subcategory": "Referee Gear",
+    "images": [
+      "https://hartsport.com.au/cdn/shop/files/hart-whistles-default-title-hart-plastic-whistle-with-breakaway-lanyard-22-112-33126582583385.jpg?v=1729490244",
+      "https://www.elifeguard.com/media/catalog/product/cache/bd5e34103edab2c1abac49bc65b3af88/w/h/whlc_179kb.jpeg"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": [
+      "Standard"
+    ],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.5,
+    "reviews_count": 116
   }
 ]

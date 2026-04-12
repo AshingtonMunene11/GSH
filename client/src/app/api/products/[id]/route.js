@@ -1,15 +1,12 @@
 import { NextResponse } from "next/server";
-import products from "@/data/products.json";
+import products from "@/data/giddy_products.json";
 
 export async function GET(request, { params }) {
   const { id } = params;
-  const product = products.find((p) => Number(p.id) === Number(id));
+  const product = products.find((p) => p.id === Number(id));
 
   if (!product) {
-    return NextResponse.json(
-      { error: `Product with id ${id} not found` },
-      { status: 404 }
-    );
+    return NextResponse.json({ error: `Product with id ${id} not found` }, { status: 404 });
   }
 
   const relatedProducts = products.filter(
@@ -18,8 +15,5 @@ export async function GET(request, { params }) {
       (p.category === product.category || p.sub_category === product.sub_category)
   );
 
-  return NextResponse.json({
-    ...product,
-    relatedProducts,
-  });
+  return NextResponse.json({ ...product, relatedProducts });
 }
