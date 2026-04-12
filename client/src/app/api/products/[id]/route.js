@@ -1,17 +1,25 @@
-import { db } from "@/lib/db";
+import { NextResponse } from "next/server";
+import products from "@/data/products.json";
 
-export async function GET(req, { params }) {
-  console.log("Params object:", params);
-  console.log("Type of id:", typeof params.id, "Value:", params.id);
-
-  const product = await db.product.findUnique({
-    where: { id: Number(params.id) },
-  });
+export async function GET(request, { params }) {
+  const { id } = params;
+  const product = products.find((p) => Number(p.id) === Number(id));
 
   if (!product) {
-    console.log("No product found for id:", params.id);
-    return Response.json({ error: "Product not found" }, { status: 404 });
+    return NextResponse.json(
+      { error: `Product with id ${id} not found` },
+      { status: 404 }
+    );
   }
 
-  return Response.json(product);
+  const relatedProducts = products.filter(
+    (p) =>
+      p.id !== product.id &&
+      (p.category === product.category || p.sub_category === product.sub_category)
+  );
+
+  return NextResponse.json({
+    ...product,
+    relatedProducts,
+  });
 }

@@ -22,21 +22,22 @@ export default function ProductDetailClient({ product }) {
         {/* Product images */}
         <div className="space-y-4">
           <img
-            src={product.image_url1}
+            src={product.images?.[0] || "/placeholder.png"}
             alt={product.name}
             className="rounded-lg w-full object-cover"
           />
-          <div className="grid grid-cols-4 gap-2">
-            {product.image_url2 && (
-              <img src={product.image_url2} alt="" className="rounded-md object-cover" />
-            )}
-            {product.image_url3 && (
-              <img src={product.image_url3} alt="" className="rounded-md object-cover" />
-            )}
-            {product.image_url4 && (
-              <img src={product.image_url4} alt="" className="rounded-md object-cover" />
-            )}
-          </div>
+          {product.images?.length > 1 && (
+            <div className="grid grid-cols-4 gap-2">
+              {product.images.slice(1).map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt=""
+                  className="rounded-md object-cover"
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Product details */}
@@ -45,7 +46,20 @@ export default function ProductDetailClient({ product }) {
             {product.category}
           </Badge>
           <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
-          <p className="text-3xl font-bold text-blue-600 mb-6">${product.price}</p>
+
+          {/* Pricing */}
+          <div className="flex items-center gap-3 mb-6">
+            <p className="text-3xl font-bold text-blue-600">
+              ${product.offer_price}
+            </p>
+            {product.original_price && (
+              <p className="text-xl text-gray-400 line-through">
+                ${product.original_price}
+              </p>
+            )}
+          </div>
+
+          {/* Short description */}
           <p className="text-gray-700 mb-6">{product.short_description}</p>
 
           {/* Availability */}
@@ -54,17 +68,16 @@ export default function ProductDetailClient({ product }) {
             {product.stock_available > 0 ? (
               <span className="text-green-600">In stock</span>
             ) : (
-              <span className="text-red-600 flex items-center gap-2">
-                Out of stock
-                <Link
-                  href="/support"
-                  className="underline text-blue-600 hover:text-blue-800"
-                >
-                  Contact Support
-                </Link>
-              </span>
+              <span className="text-red-600">Out of stock</span>
             )}
           </p>
+
+          {/* Rating */}
+          {product.rating && (
+            <p className="text-sm text-yellow-500 mb-6">
+              ⭐ {product.rating} ({product.reviews_count} reviews)
+            </p>
+          )}
 
           {/* Add to Cart */}
           <Button
@@ -80,60 +93,11 @@ export default function ProductDetailClient({ product }) {
           {product.long_description && (
             <div className="mt-8 border-t pt-6">
               <h2 className="text-xl font-semibold mb-2">Details</h2>
-              <p className="text-gray-700 leading-relaxed">{product.long_description}</p>
+              <p className="text-gray-700 leading-relaxed">
+                {product.long_description}
+              </p>
             </div>
           )}
-
-          {/* Cross-sell */}
-          {product.cross_up_sell1 && (
-            <div className="mt-8 border-t pt-6">
-              <h2 className="text-xl font-semibold mb-2">You may also like</h2>
-              <Link
-                href={`/products/${product.cross_up_sell1}`}
-                className="text-blue-600 underline"
-              >
-                View related product
-              </Link>
-            </div>
-          )}
-
-          {/* Related Products */}
-          {product.relatedProducts && product.relatedProducts.length > 0 && (
-            <div className="mt-12 border-t pt-6">
-              <h2 className="text-xl font-semibold mb-4">Explore Related Products</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                {product.relatedProducts.map((related) => (
-                  <Link
-                    key={related.id}
-                    href={`/products/${related.id}`}
-                    className="block border rounded-lg overflow-hidden hover:shadow-lg transition"
-                  >
-                    <div className="aspect-square bg-gray-100 overflow-hidden">
-                      <img
-                        src={related.image_url1}
-                        alt={related.name}
-                        className="object-cover w-full h-full hover:scale-105 transition-transform"
-                      />
-                    </div>
-                    <div className="p-3">
-                      <h3 className="text-sm font-semibold mb-1">{related.name}</h3>
-                      <div className="flex items-center gap-2">
-                        <p className="text-blue-600 font-bold">${related.price}</p>
-                        {related.original_price && (
-                          <p className="text-xs text-gray-400 line-through">
-                            ${related.original_price}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-          {/* <pre className="mt-8 text-left bg-gray-100 p-4 rounded">
-                {JSON.stringify(product, null, 2)}
-            </pre> */}
         </div>
       </div>
     </div>

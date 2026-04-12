@@ -1,0 +1,103 @@
+[
+  {
+    "id": 1,
+    "sku": "Nike Phantom GX Academy MG",
+    "name": "Nike Phantom GX Academy MG",
+    "short_description": "Precision football boots.",
+    "long_description": "Designed for precise players, features an expanded touch zone.",
+    "offer_price": 8500,
+    "original_price": 9500,
+    "stock_available": 16,
+    "category": "Team Sports",
+    "sub_category": "Football",
+    "sub_subcategory": "Boots",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOdTG23rebSv7nSASNcKaQig3Xw9yXqS-FoA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJYa1riGZdRly-vsIZfS5l5xeLLvCVDFCzXozdBzwPDg&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ38tGVmRraKprzs_hvgillhJnNSMxpI3LQJFia-ik0RA&s",
+      "https://gfx.r-gol.com/media/res/products/186/159186/465x605/dd9473-010_1.jpg",
+      "https://thumblr.uniid.it/product/292420/afe818d5320f.jpg?width=3840&format=webp&q=75"
+    ],
+    "color": "Black/Blue",
+    "brand": "Nike",
+    "size_variation": ["40","41","42","43","44","45"],
+    "related_products": true,
+    "featured": true,
+    "rating": 4.4,
+    "reviews_count": 162
+  },
+  {
+    "id": 2,
+    "sku": "Adidas 23/24 Arsenal Home Jersey",
+    "name": "Adidas 23/24 Arsenal Home Jersey",
+    "short_description": "Official Arsenal Home Jersey.",
+    "long_description": "Authentic Arsenal home kit for the 23/24 season.",
+    "offer_price": 3500,
+    "original_price": 4500,
+    "stock_available": 35,
+    "category": "Team Sports",
+    "sub_category": "Football",
+    "sub_subcategory": "Jerseys",
+    "images": [
+      "https://images-na.ssl-images-amazon.com/images/I/61L067Tu-NL._UL500_.jpg",
+      "https://m.media-amazon.com/images/I/31fZr5RmMaL._AC_SR70_.jpg",
+      "https://thumblr.uniid.it/product/353732/f1d9dc35d1c1.jpg?width=3840&format=webp&q=75",
+      "https://www.tudnfanshop.com/cdn/shop/files/RY703UIP_YBK2_53b106b0-30eb-4123-9d82-b088a490b5b9.png?v=1726767751&width=1500"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": ["Standard"],
+    "related_products": true,
+    "featured": true,
+    "rating": 4.7,
+    "reviews_count": 164
+  },
+  {
+    "id": 3,
+    "sku": "Nike Pitch Training Football",
+    "name": "Nike Pitch Training Football",
+    "short_description": "Durable training ball.",
+    "long_description": "High-contrast graphics for visibility.",
+    "offer_price": 2200,
+    "original_price": 2800,
+    "stock_available": 8,
+    "category": "Team Sports",
+    "sub_category": "Football",
+    "sub_subcategory": "Balls",
+    "images": [
+      "https://m.media-amazon.com/images/I/61otB7d7OEL._AC_UF894,1000_QL80_.jpg",
+      "https://www.sollymsports.com/wp-content/uploads/2024/03/IMG_3444.png"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": ["Standard"],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.5,
+    "reviews_count": 158
+  },
+  {
+    "id": 4,
+    "sku": "Kipsta F500 Shin Guards",
+    "name": "Kipsta F500 Shin Guards",
+    "short_description": "Protective gear for players.",
+    "long_description": "Hard shell protection with foam backing.",
+    "offer_price": 1200,
+    "original_price": 1500,
+    "stock_available": 37,
+    "category": "Team Sports",
+    "sub_category": "Football",
+    "sub_subcategory": "Accessories",
+    "images": [
+      "https://productimages.footy.com/6967913c500d04d5a5b99813/0/3840.webp?q=75",
+      "https://contents.mediadecathlon.com/p1988880/k$bfd155067b6e0a84511f6efd0d1ef8a6/football-shin-pads-kipsta-f500-viralto-blue-kipsta-8555958.jpg?f=1920x0&format=auto"
+    ],
+    "color": "Standard",
+    "brand": "Generic",
+    "size_variation": ["Standard"],
+    "related_products": false,
+    "featured": false,
+    "rating": 4.5,
+    "reviews_count": 45
+  }
+]

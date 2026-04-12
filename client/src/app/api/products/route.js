@@ -1,6 +1,6 @@
-import { db } from "@/lib/db";
+import { NextResponse } from "next/server";
+import products from "@/data/products.json";
 
 export async function GET() {
-  const products = await db.product.findMany();
-  return Response.json(products);
+  return NextResponse.json(products);
 }
