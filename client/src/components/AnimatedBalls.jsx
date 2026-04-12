@@ -2,30 +2,28 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
-export default function BouncingBalls() {
+export default function FallingBalls() {
   const baseBalls = [
     { src: "/football.png" },
     { src: "/basketball.png" },
     { src: "/tennis.png" },
   ];
 
-  // Create 20 random balls
-  const balls = Array.from({ length: 20 }).map(() => {
+  // Generate 20 balls
+  const balls = Array.from({ length: 20 }).map((_, i) => {
     const ball = baseBalls[Math.floor(Math.random() * baseBalls.length)];
-
     const isForeground = Math.random() < 0.4;
 
     return {
+      id: i,
       src: ball.src,
       left: isForeground
-        ? `${70 + Math.random() * 30}%`
+        ? `${70 + Math.random() * 30}%` // more on right side
         : `${Math.random() * 100}%`,
       size: 40 + Math.random() * 50,
       layer: isForeground ? 3 : [-3, -1, 2][Math.floor(Math.random() * 3)],
-      bounceHeight: 250 + Math.random() * 450,
-      drift: Math.random() * 100 - 50,
-      duration: 2 + Math.random() * 3,
-      idleTime: 2000 + Math.random() * 6000, // 2–8 seconds idle
+      fallDistance: window.innerHeight + 100, // drop beyond viewport
+      duration: 1.5 + Math.random() * 2, // fall speed
     };
   });
 
@@ -41,8 +39,8 @@ export default function BouncingBalls() {
         overflow: "hidden",
       }}
     >
-      {balls.map((ball, index) => (
-        <Ball key={index} ball={ball} />
+      {balls.map((ball) => (
+        <Ball key={ball.id} ball={ball} />
       ))}
     </div>
   );
@@ -51,37 +49,35 @@ export default function BouncingBalls() {
 function Ball({ ball }) {
   const controls = useAnimation();
 
-  // Drop once, then idle, then random throws forever
   useEffect(() => {
     async function animateBall() {
-      // Initial drop
+      // Initial drop for all balls
       await controls.start({
-        y: [ -100, ball.bounceHeight, 0 ],
-        x: [0, ball.drift, 0],
+        y: [ -100, ball.fallDistance ],
         transition: {
           duration: ball.duration,
-          ease: "easeInOut",
+          ease: "easeIn",
         },
       });
 
-      // Idle
-      await new Promise((res) => setTimeout(res, ball.idleTime));
-
-      // Loop random throws
+      // Loop: occasionally drop one or two balls again
       while (true) {
-        await controls.start({
-          y: [0, ball.bounceHeight, 0],
-          x: [0, ball.drift, 0],
-          transition: {
-            duration: ball.duration,
-            ease: "easeInOut",
-          },
-        });
-
-        // Random idle between throws
+        // Random wait before next fall
         await new Promise((res) =>
-          setTimeout(res, 1500 + Math.random() * 5000)
+          setTimeout(res, 4000 + Math.random() * 8000) // 4–12s idle
         );
+
+        // Random chance: only some balls fall again
+        if (Math.random() < 0.3) { // 30% chance
+          await controls.set({ y: -100 }); // reset to top instantly
+          await controls.start({
+            y: [ -100, ball.fallDistance ],
+            transition: {
+              duration: ball.duration,
+              ease: "easeIn",
+            },
+          });
+        }
       }
     }
 
