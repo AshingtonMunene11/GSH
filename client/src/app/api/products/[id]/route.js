@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import products from "@/data/giddy_products.json";
+import products from "@/data/products.json";
 
 export async function GET(request, { params }) {
   const { id } = params;
