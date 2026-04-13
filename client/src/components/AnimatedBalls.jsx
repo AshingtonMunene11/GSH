@@ -1,34 +1,38 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function FallingBalls() {
-  const [balls, setBalls] = useState([]);
+  const baseBalls = [
+    { src: "/football.png" },
+    { src: "/basketball.png" },
+    { src: "/tennis.png" },
+  ];
 
-  useEffect(() => {
-    const baseBalls = [
-      { src: "/football.png" },
-      { src: "/basketball.png" },
-      { src: "/tennis.png" },
-    ];
-
-    const generated = Array.from({ length: 20 }).map((_, i) => {
-      const ball = baseBalls[Math.floor(Math.random() * baseBalls.length)];
-      return {
-        id: i,
-        src: ball.src,
-        left: `${Math.random() * 100}%`,
-        size: 40 + Math.random() * 50,
-        fallDistance: window.innerHeight + 100,
-        duration: 1.5 + Math.random() * 2,
-      };
-    });
-
-    setBalls(generated);
-  }, []);
+  const balls = Array.from({ length: 20 }).map((_, i) => {
+    const ball = baseBalls[Math.floor(Math.random() * baseBalls.length)];
+    return {
+      id: i,
+      src: ball.src,
+      left: `${Math.random() * 100}%`,
+      size: 40 + Math.random() * 50,
+      fallDistance: typeof window !== "undefined" ? window.innerHeight + 100 : 800,
+      duration: 1.5 + Math.random() * 2,
+    };
+  });
 
   return (
-    <div style={{ position: "fixed", width: "100vw", height: "100vh", top: 0, left: 0, pointerEvents: "none", overflow: "hidden" }}>
+    <div
+      style={{
+        position: "fixed",
+        width: "100vw",
+        height: "100vh",
+        top: 0,
+        left: 0,
+        pointerEvents: "none",
+        overflow: "hidden",
+      }}
+    >
       {balls.map((ball) => (
         <Ball key={ball.id} ball={ball} />
       ))}
@@ -41,17 +45,19 @@ function Ball({ ball }) {
 
   useEffect(() => {
     async function animateBall() {
-      // Initial drop
+      // Initial drop for all balls
       await controls.start({
         y: [-100, ball.fallDistance],
         transition: { duration: ball.duration, ease: "easeIn" },
       });
 
-      // Random drops loop
+      // Loop: drop again every ~3 minutes
       while (true) {
-        await new Promise((res) => setTimeout(res, 4000 + Math.random() * 8000));
-        if (Math.random() < 0.3) {
-          await controls.set({ y: -100 });
+        await new Promise((res) => setTimeout(res, 180000)); // 180,000 ms = 3 minutes
+
+        // Random chance: only some balls drop again
+        if (Math.random() < 0.3) { // 30% chance
+          await controls.set({ y: -100 }); // reset to top instantly
           await controls.start({
             y: [-100, ball.fallDistance],
             transition: { duration: ball.duration, ease: "easeIn" },
@@ -59,6 +65,7 @@ function Ball({ ball }) {
         }
       }
     }
+
     animateBall();
   }, []);
 

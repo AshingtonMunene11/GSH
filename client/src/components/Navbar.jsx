@@ -33,20 +33,30 @@ export default function Navbar() {
               height={50}
               className="rounded-lg"
             />
-            <span className="font-bold text-xl hover:text-[#f4821f]">
+            <span className="font-bold text-xl transition-transform duration-200 hover:text-[#f4821f] hover:scale-110">
               Giddy Sports Hub
             </span>
           </Link>
 
           {/* Navigation links */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-sm hover:text-[#f4821f] transition-colors">
+            <Link
+              href="/"
+              className="text-sm transition-transform duration-200 hover:text-[#f4821f] hover:scale-110"
+            >
               Home
             </Link>
-            <Link href="/products" className="text-sm hover:text-[#f4821f] transition-colors">
+            <Link
+              href="/products"
+              className="text-sm transition-transform duration-200 hover:text-[#f4821f] hover:scale-110"
+            >
               Shop
             </Link>
-            <Link href="/#about" scroll={false} className="text-sm hover:text-[#f4821f] transition-colors">
+            <Link
+              href="/#about"
+              scroll={false}
+              className="text-sm transition-transform duration-200 hover:text-[#f4821f] hover:scale-110"
+            >
               About
             </Link>
           </nav>
@@ -59,7 +69,7 @@ export default function Navbar() {
               <Input
                 type="search"
                 placeholder="Search products..."
-                className="pl-9 pr-4 w-64 text-white hover:text-[#f4821f]"
+                className="pl-9 pr-4 w-64 text-white transition-transform duration-200 hover:text-[#f4821f] hover:scale-105"
               />
             </div>
 
@@ -67,13 +77,16 @@ export default function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setShowLogin(true)}
-              className="hover:text-[#f4821f]"
+              className="transition-transform duration-200 hover:text-[#f4821f] hover:scale-110"
             >
               <User className="h-5 w-5" />
             </Button>
 
             {/* Cart */}
-            <Link href="/cart" className="relative hover:text-[#f4821f]">
+            <Link
+              href="/cart"
+              className="relative transition-transform duration-200 hover:text-[#f4821f] hover:scale-110"
+            >
               <Button variant="ghost" size="icon">
                 <ShoppingCart className="h-5 w-5" />
                 {count > 0 && (
