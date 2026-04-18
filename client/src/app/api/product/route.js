@@ -1,14 +1,7 @@
-// import { NextResponse } from "next/server";
-// import products from "@/data/products.json";
-
-// export async function GET() {
-//   return NextResponse.json(products);
-// }
-
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   try {
     const res = await fetch(`${baseUrl}/data/products.json`, { cache: "no-store" });

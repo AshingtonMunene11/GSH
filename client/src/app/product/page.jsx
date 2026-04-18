@@ -11,8 +11,8 @@ function slugify(text) {
 }
 
 export default async function ProductsPage() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  const res = await fetch(`${baseUrl}/api/product`, { cache: "no-store" });
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+  const res = await fetch(`${baseUrl}/product`, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");

@@ -8,7 +8,7 @@ function slugify(text) {
 }
 
 export default async function CategoryPage({ params }) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
   const res = await fetch(`${baseUrl}/product`, { cache: "no-store" });
 
   if (!res.ok) {
