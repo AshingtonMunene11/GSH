@@ -47,7 +47,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link
-              href="/products"
+              href="/product"
               className="text-sm transition-transform duration-200 hover:text-[#f4821f] hover:scale-110"
             >
               Shop
