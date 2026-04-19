@@ -1,20 +1,22 @@
 function slugify(text) {
   return text.toString().toLowerCase().trim()
+    .replace(/&/g, "") // remove ampersands so "Gym & Fitness" → "gym-fitness"
     .replace(/\s+/g, "-")
     .replace(/[^\w\-]+/g, "")
     .replace(/\-\-+/g, "-");
 }
 
-export default async function ProductDetailPage({ params }) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${baseUrl}/product`, { cache: "no-store" });
+export default async function ProductDetailPage(props) {
+  // unwrap params properly
+  const { category, name } = await props.params;
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");
   }
 
   const products = await res.json();
-  const { category, name } = params;
 
   // Find the product by matching both category and name slugs
   const product = products.find(
@@ -56,7 +58,7 @@ export default async function ProductDetailPage({ params }) {
           </div>
 
           <p className="text-gray-700 mb-6">
-            {product.description || "No description available."}
+            {product.long_description || "No description available."}
           </p>
 
           <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
