@@ -2,21 +2,23 @@ import Link from "next/link";
 
 function slugify(text) {
   return text.toString().toLowerCase().trim()
+    .replace(/&/g, "") // remove ampersands
     .replace(/\s+/g, "-")
     .replace(/[^\w\-]+/g, "")
     .replace(/\-\-+/g, "-");
 }
 
-export default async function CategoryPage({ params }) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${baseUrl}/product`, { cache: "no-store" });
+export default async function CategoryPage(props) {
+  // unwrap params properly
+  const { category } = await props.params;
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");
   }
 
   const products = await res.json();
-  const { category } = params;
 
   const categoryProducts = products.filter(
     (p) => slugify(p.category) === category

@@ -5,22 +5,20 @@ function slugify(text) {
     .toString()
     .toLowerCase()
     .trim()
+    .replace(/&/g, "") // remove ampersands
     .replace(/\s+/g, "-")
     .replace(/[^\w\-]+/g, "")
     .replace(/\-\-+/g, "-");
 }
 
 export default async function ProductsPage() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${baseUrl}/product`, { cache: "no-store" });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");
   }
 
   const products = await res.json();
-
-  // Get unique categories
   const categories = [...new Set(products.map((p) => p.category))];
 
   return (
