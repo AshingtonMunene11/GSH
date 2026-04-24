@@ -2,14 +2,13 @@ import Link from "next/link";
 
 function slugify(text) {
   return text.toString().toLowerCase().trim()
-    .replace(/&/g, "") // remove ampersands
+    .replace(/&/g, "") 
     .replace(/\s+/g, "-")
     .replace(/[^\w\-]+/g, "")
     .replace(/\-\-+/g, "-");
 }
 
 export default async function CategoryPage(props) {
-  // unwrap params properly
   const { category } = await props.params;
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, { cache: "no-store" });
