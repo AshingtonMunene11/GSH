@@ -17,6 +17,7 @@ export default function HeroSection({ banners }) {
   const [current, setCurrent] = useState(1);
   const [transitioning, setTransitioning] = useState(true);
   const [overlayCategory, setOverlayCategory] = useState(null);
+  const [overlayPos, setOverlayPos] = useState({ top: 0 });
 
   const extendedBanners = [
     banners[banners.length - 1],
@@ -87,14 +88,19 @@ export default function HeroSection({ banners }) {
         <h2 className="font-bold text-white flex-shrink-0 pb-2 border-b border-white/40">
           Product Categories
         </h2>
-        <div className="flex flex-col gap-2 overflow-y-auto mt-2 custom-scrollbar">
+        <div className="flex flex-col gap-2 overflow-y-auto mt-2 custom-scrollbar relative">
           {Object.keys(categories).length === 0 ? (
             <p className="text-white/70">Loading categories...</p>
           ) : (
             Object.keys(categories).map((cat, i) => (
               <button
                 key={i}
-                onMouseEnter={() => setOverlayCategory(cat)}
+                onMouseEnter={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const parentRect = e.currentTarget.parentElement.getBoundingClientRect();
+                  setOverlayCategory(cat);
+                  setOverlayPos({ top: rect.top - parentRect.top });
+                }}
                 onMouseLeave={() => setOverlayCategory(null)}
                 className="w-full text-left px-3 py-2 rounded text-white hover:bg-[#f4821f] transition-colors cursor-pointer"
               >
@@ -104,25 +110,27 @@ export default function HeroSection({ banners }) {
           )}
         </div>
 
-        {/* Floating Sub‑Category Panel */}
+        {/* Floating Sub‑Category Panel (no title) */}
         {overlayCategory && (
           <div
-            className="absolute top-16 left-full ml-2 
-                       bg-[#f4821f]/50 backdrop-blur-sm 
-                       rounded-lg shadow-lg p-4 
-                       w-64 max-h-80 overflow-y-auto z-50"
+            className="absolute left-full ml-2 
+                       bg-[#f4821f]/40 backdrop-blur-sm 
+                       rounded-lg shadow-lg p-3 
+                       w-64 z-50"
+            style={{ top: overlayPos.top }}
             onMouseEnter={() => setOverlayCategory(overlayCategory)} // keep open
             onMouseLeave={() => setOverlayCategory(null)} // close when leaving
           >
-            <h3 className="text-lg font-bold text-white mb-3">
-              {overlayCategory} Subcategories
-            </h3>
-            <div className="flex flex-col gap-2">
+            <div
+              className={`flex flex-col gap-2 ${
+                categories[overlayCategory].length > 4 ? "max-h-40 overflow-y-auto custom-scrollbar" : ""
+              }`}
+            >
               {categories[overlayCategory].map((sub, j) => (
                 <Link
                   key={j}
                   href={`/product/${slugify(overlayCategory)}/${slugify(sub)}`}
-                  className="px-3 py-2 rounded text-white hover:bg-white/20 transition-colors"
+                  className="px-3 py-2 rounded text-black hover:bg-white/20 transition-colors"
                 >
                   {sub}
                 </Link>
