@@ -20,17 +20,19 @@ export default async function Home() {
     <div className="flex flex-col min-h-screen bg-gray-100">
       <AnimatedBalls />
       <main className="flex-grow">
+        {/* Hero Section */}
         <HeroSection banners={banners} />
 
-        {/* Shop by Sport cards driven by product JSON */}
+        {/* Product Showcase Grid */}
         <ShopGrid products={products} />
 
-        {/* Full product list below */}
+        {/* Featured Products List */}
         <section className="mt-10 px-4">
           <h2 className="text-2xl font-bold mb-4">Featured Products</h2>
           <ProductList category={null} />
         </section>
 
+        {/* About Section */}
         <section id="about" className="flex items-center justify-center min-h-screen">
           <AboutSection />
         </section>

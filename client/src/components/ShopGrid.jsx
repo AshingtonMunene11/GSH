@@ -1,25 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import ShopCard from "./ShopCard";
 
 export default function ShopGrid({ products }) {
-  // Shuffle products randomly
   const shuffled = [...products].sort(() => 0.5 - Math.random());
+  const scrollRef = useRef(null);
 
-  // Show only first 6 initially
-  const [visibleCount, setVisibleCount] = useState(6);
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
 
-  const handleShowMore = () => {
-    setVisibleCount(prev => prev + 6); // load 6 more each click
-  };
+    let scrollInterval = setInterval(() => {
+      el.scrollLeft += 1; // slow movement
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+        el.scrollLeft = 0; // loop back
+      }
+    }, 40);
+
+    // Pause on hover
+    el.addEventListener("mouseenter", () => clearInterval(scrollInterval));
+    el.addEventListener("mouseleave", () => {
+      scrollInterval = setInterval(() => {
+        el.scrollLeft += 1;
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+          el.scrollLeft = 0;
+        }
+      }, 40);
+    });
+
+    return () => clearInterval(scrollInterval);
+  }, []);
 
   return (
     <section className="mt-8 w-full">
-      {/* Responsive grid: full width, adjusts by screen size */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
-        {shuffled.slice(0, visibleCount).map((p) => (
-          <div key={p.id} className="shadow-lg rounded-lg overflow-hidden">
+      <div
+        ref={scrollRef}
+        className="flex gap-6 overflow-x-auto px-4 snap-x snap-mandatory scroll-smooth custom-scrollbar"
+      >
+        {shuffled.map((p) => (
+          <div
+            key={p.id}
+            className="min-w-[250px] shadow-2xl rounded-2xl overflow-hidden hover:shadow-3xl hover:scale-105 transition-transform duration-300 snap-center"
+          >
             <ShopCard
               title={p.name}
               description={p.short_description}
@@ -29,18 +52,6 @@ export default function ShopGrid({ products }) {
           </div>
         ))}
       </div>
-
-      {/* Show More button */}
-      {visibleCount < shuffled.length && (
-        <div className="flex justify-center mt-6">
-          <button
-            onClick={handleShowMore}
-            className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600 transition"
-          >
-            View More Products
-          </button>
-        </div>
-      )}
     </section>
   );
 }
