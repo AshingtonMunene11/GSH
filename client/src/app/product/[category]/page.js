@@ -1,22 +1,19 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import ProductList from "@/components/ProductList";
-
-// import ProductList from "../_components/ProductList";
+import ProductList from "@/components/ProductList"; 
 
 export default function CategoryPage() {
   const { category } = useParams();
 
-  console.log("Category param:", category);
-
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Category: {category}</h1>
+    <section className="p-6">
+      <h1 className="text-2xl font-bold mb-4">{category}</h1>
       <ProductList category={category} />
-    </div>
+    </section>
   );
 }
+
 
 
 

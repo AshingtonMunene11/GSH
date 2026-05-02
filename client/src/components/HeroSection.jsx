@@ -103,20 +103,22 @@ export default function HeroSection({ banners }) {
                 }}
                 onMouseLeave={() => setOverlayCategory(null)}
               >
-                <button
-                  className="w-full text-left px-3 py-2 rounded text-white hover:bg-[#f4821f] transition-colors cursor-pointer"
-                >
-                  {cat}
-                </button>
+                {/* ✅ Category button navigates to /product/[category] */}
+                <Link href={`/product/${slugify(cat)}`}>
+                  <button
+                    className="w-full text-left px-3 py-2 rounded text-white hover:bg-[#f4821f] transition-colors cursor-pointer"
+                  >
+                    {cat}
+                  </button>
+                </Link>
 
                 {/* Floating Sub‑Category Panel */}
                 {overlayCategory === cat && (
                   <div
-                    className="fixed left-[25%] 
-                               bg-[#f4821f]/40 backdrop-blur-sm 
-                               rounded-lg shadow-lg p-3 
-                               w-64 z-50"
+                    className="fixed left-[25%] bg-[#f4821f]/40 backdrop-blur-sm rounded-lg shadow-lg p-3 w-64 z-50"
                     style={{ top: overlayTop }}
+                    onMouseEnter={() => setOverlayCategory(cat)}   // ✅ keep open while hovering panel
+                    onMouseLeave={() => setOverlayCategory(null)} // ✅ close only when leaving both
                   >
                     <div
                       className={`flex flex-col gap-2 ${
@@ -126,7 +128,7 @@ export default function HeroSection({ banners }) {
                       {categories[overlayCategory].map((sub, j) => (
                         <Link
                           key={j}
-                          href={`/product/${slugify(cat)}/${slugify(sub)}`}
+                          href={`/product/${slugify(cat)}/${slugify(sub)}`} // ✅ no extra slash
                           className="px-3 py-2 rounded text-black hover:bg-white/20 transition-colors"
                         >
                           {sub}
@@ -149,14 +151,15 @@ export default function HeroSection({ banners }) {
           }`}
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
-          {extendedBanners.map((src, index) => (
+          {extendedBanners.map((banner, index) => (
             <div
               key={index}
               className="w-full flex-shrink-0 h-full relative rounded-lg overflow-hidden"
             >
-              <Link href="/products">
+              {/* ✅ Banner links to category instead of generic /products */}
+              <Link href={`/product/${slugify(banner.category || "team-sports")}`}>
                 <Image
-                  src={src}
+                  src={banner.src || banner} // if banners array is just URLs, use banner directly
                   alt={`Banner ${index}`}
                   fill
                   className="object-cover rounded-lg transform transition-transform duration-500 hover:scale-105"
@@ -169,7 +172,6 @@ export default function HeroSection({ banners }) {
     </section>
   );
 }
-
 
 // "use client";
 
@@ -276,11 +278,14 @@ export default function HeroSection({ banners }) {
 //                 }}
 //                 onMouseLeave={() => setOverlayCategory(null)}
 //               >
-//                 <button
-//                   className="w-full text-left px-3 py-2 rounded text-white hover:bg-[#f4821f] transition-colors cursor-pointer"
-//                 >
-//                   {cat}
-//                 </button>
+//                 {/* ✅ Category button navigates to /product/[category] */}
+//                 <Link href={`/product/${slugify(cat)}`}>
+//                   <button
+//                     className="w-full text-left px-3 py-2 rounded text-white hover:bg-[#f4821f] transition-colors cursor-pointer"
+//                   >
+//                     {cat}
+//                   </button>
+//                 </Link>
 
 //                 {/* Floating Sub‑Category Panel */}
 //                 {overlayCategory === cat && (
@@ -329,6 +334,7 @@ export default function HeroSection({ banners }) {
 //               key={index}
 //               className="w-full flex-shrink-0 h-full relative rounded-lg overflow-hidden"
 //             >
+//               {/* You can change this to point to a category if banners are category-specific */}
 //               <Link href="/products">
 //                 <Image
 //                   src={src}

@@ -13,7 +13,6 @@ export default function ProductList({ category, sub }) {
         if (!res.ok) throw new Error("Failed to fetch products");
 
         const data = await res.json();
-        console.log("Fetched products:", data);
 
         let filtered = data;
         if (category) {
@@ -23,7 +22,6 @@ export default function ProductList({ category, sub }) {
           filtered = filtered.filter((p) => slugify(p.sub_category) === sub);
         }
 
-        console.log("Filtered products:", filtered);
         setProducts(filtered);
       } catch (err) {
         console.error("Error fetching products:", err);
@@ -41,8 +39,8 @@ export default function ProductList({ category, sub }) {
           {products.map((p) => (
             <div key={p.id} className="border rounded p-3">
               <h2 className="font-semibold">{p.name}</h2>
-              <p className="text-sm text-gray-600">{p.description}</p>
-              <Link href={`/product/${slugify(p.category)}/${sub ? slugify(sub) + "/" : ""}${slugify(p.name)}`}>
+              <p className="text-sm text-gray-600">{p.short_description}</p>
+              <Link href={`/product/${slugify(p.category)}/${slugify(p.name)}`}>
                 View details
               </Link>
             </div>

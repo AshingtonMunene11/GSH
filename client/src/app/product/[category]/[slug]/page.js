@@ -1,3 +1,64 @@
+// "use client";
+
+// import { useParams } from "next/navigation";
+// import ProductList from "@/components/ProductList"; // make sure ProductList.jsx is in src/components
+// import { useEffect, useState } from "react";
+
+// function slugify(text) {
+//   return text.toString().toLowerCase().trim()
+//     .replace(/&/g, "")
+//     .replace(/\s+/g, "-")
+//     .replace(/[^\w\-]+/g, "")
+//     .replace(/\-\-+/g, "-");
+// }
+
+// export default function CategorySlugPage() {
+//   const { category, slug } = useParams();
+//   const [mode, setMode] = useState("sub"); // "sub" or "item"
+
+//   useEffect(() => {
+//     async function checkMode() {
+//       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, { cache: "no-store" });
+//       const data = await res.json();
+
+//       const isSub = data.some(
+//         (p) => slugify(p.category) === category && slugify(p.sub_category) === slug
+//       );
+
+//       if (isSub) {
+//         setMode("sub");
+//         return;
+//       }
+
+//       const isItem = data.some(
+//         (p) => slugify(p.category) === category && slugify(p.name) === slug
+//       );
+
+//       if (isItem) {
+//         setMode("item");
+//       }
+//     }
+//     checkMode();
+//   }, [category, slug]);
+
+//   return (
+//     <section className="p-6">
+//       {mode === "sub" ? (
+//         <>
+//           <h1 className="text-2xl font-bold mb-4">{category} / {slug}</h1>
+//           <ProductList category={category} sub={slug} />
+//         </>
+//       ) : (
+//         <>
+//           <h1 className="text-2xl font-bold mb-4">Product Details</h1>
+//           <ProductList category={category} />
+//         </>
+//       )}
+//     </section>
+//   );
+// }
+
+
 "use client";
 
 import { useEffect, useState } from "react";
