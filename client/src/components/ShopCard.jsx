@@ -11,7 +11,7 @@ export default function ShopCard({ title, description, image, href }) {
         className="object-cover w-full h-full"
       />
 
-      {/* Info overlay with fade-in + stagger */}
+      {/* Info overlay with fade-in stagger */}
       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center text-white p-4">
         <h3 className="text-lg font-bold mb-2 text-center transition-opacity duration-700 delay-200 opacity-0 group-hover:opacity-100">
           {title}
@@ -21,9 +21,9 @@ export default function ShopCard({ title, description, image, href }) {
         </p>
       </div>
 
-      {/* Shop button bottom-left, rounded-full, fade-in with stagger */}
+      {/* Shop button bottom-left, rounded-full, fade-in + upward slide */}
       <Link href={href}>
-        <button className="absolute bottom-3 left-3 bg-[#f4821f] text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-600">
+        <button className="absolute bottom-3 left-3 bg-[#f4821f] text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-700 delay-600 transform group-hover:-translate-y-1">
           Shop Now
         </button>
       </Link>

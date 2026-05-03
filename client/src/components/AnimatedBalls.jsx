@@ -2,7 +2,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function FallingBalls() {
+export default function AnimatedBalls() {   // 👈 renamed
   const [balls, setBalls] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function FallingBalls() {
     });
 
     setBalls(generated);
-  }, []); // 👈 only runs client-side
+  }, []);
 
   return (
     <div

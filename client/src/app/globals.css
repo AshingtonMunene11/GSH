@@ -28,21 +28,23 @@ body {
 /* Marquee animation */
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
-  }
-  90% {
-    transform: translateX(-100%); /* finish scroll */
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%); /* hold at end */
+    transform: translateX(-50%); 
   }
 }
 
 .animate-marquee {
   display: inline-flex;
-  animation: marquee 45s linear infinite; /* 40s scroll + 5s pause */
+  width: max-content;
+  animation: marquee 70s linear infinite; /* 40s scroll + 5s pause */
+  animation-delay: 3s; 
 }
 
+.animate-marquee:hover {
+  animation-play-state: paused; /* pause on hover */
+}
 /* Custom Scrollbar */
 .custom-scrollbar {
   -ms-overflow-style: none; /* IE/Edge */
@@ -71,4 +73,4 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
+} 
