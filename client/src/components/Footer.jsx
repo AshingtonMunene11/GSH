@@ -16,7 +16,7 @@ export default function Footer() {
                 height={200}
                 className="rounded-lg"
               />
-              <span className="font-bold text-2xl hover:text-[#f4821f]">Giddy Sports Hub</span>
+              {/* <span className="font-bold text-2xl hover:text-[#f4821f]">Giddy Sports Hub</span> */}
             </div>
             <p className="text-gray-200 text-sm">
               Your trusted destination for sports gear and accessories.

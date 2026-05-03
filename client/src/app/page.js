@@ -3,6 +3,7 @@ import path from "path";
 import ShopGrid from "@/components/ShopGrid";
 import HeroSection from "@/components/HeroSection";
 import ProductList from "@/components/ProductList";
+import AboutInfo from "@/components/AboutInfo"; 
 import AboutSection from "@/components/AboutSection";
 import AnimatedBalls from "@/components/AnimatedBalls";
 import FeaturedProducts from "@/components/FeaturedProducts";
@@ -24,19 +25,27 @@ export default async function Home() {
         {/* Hero Section */}
         <HeroSection banners={banners} />
 
-        {/* Product Showcase Grid */}
-        <ShopGrid products={products} />
-
-        {/* Featured Products List */}
-        <section className="mt-10 px-4">
-          <h2 className="text-2xl font-bold mb-4">Featured Products</h2>
-          <ProductList category={null} />
-        </section>
-
-         {/* Featured Products */}
+        {/* Featured Products */}
         <section id="about" className="flex items-center justify-center min-h-screen">
-          <FeaturedProducts products={products} />
+          {/* <FeaturedProducts products={products} /> */}
+          <FeaturedProducts products={products} count={4} />
+        </section> 
+
+        {/* Product Showcase Grid */}
+        <section>
+          <ShopGrid products={products} />
         </section>
+
+        {/* About Info */}
+        <section>
+          <AboutInfo />
+        </section> 
+ 
+        {/* About Section */}
+        <section>
+          <AboutSection />
+        </section>  
+
       </main>
     </div>
   );

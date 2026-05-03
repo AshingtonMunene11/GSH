@@ -30,7 +30,7 @@ export default function ShopGrid({ products }) {
         ))}
 
         {/* Duplicate set for seamless loop */}
-        {shuffled.map((p) => (
+        {/* {shuffled.map((p) => (
           <div
             key={`second-${p.id}`}
             className="min-w-[250px] shadow-2xl rounded-2xl overflow-hidden hover:shadow-3xl hover:scale-105 transition-transform duration-300"
@@ -42,7 +42,7 @@ export default function ShopGrid({ products }) {
               href={`/product/${p.category}/${p.sub_category}/${p.id}`}
             />
           </div>
-        ))}
+        ))} */}
       </div>
     </section>
   );
