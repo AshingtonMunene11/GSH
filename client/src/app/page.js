@@ -27,7 +27,6 @@ export default async function Home() {
 
         {/* Featured Products */}
         <section id="about" className="flex items-center justify-center min-h-screen">
-          {/* <FeaturedProducts products={products} /> */}
           <FeaturedProducts products={products} count={4} />
         </section> 
 

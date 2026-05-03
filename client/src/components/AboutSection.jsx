@@ -38,7 +38,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="flex justify-center items-center min-h-screen bg-gray-100 py-16 px-6"
+      className="flex justify-center items-center min-h-[500px] bg-gray-100 py-4 px-6 mb-12"
     >
       <div className="relative w-[400px] h-[250px] flex justify-center items-center">
         {cards.map((card, index) => {
@@ -66,7 +66,7 @@ export default function AboutSection() {
           );
         })}
 
-        {/* Floating navigation buttons with glow pulse */}
+        {/* Floating navigation buttons */}
         <button
           onClick={prevCard}
           className="absolute -left-14 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white text-green-700 shadow-lg animate-float animate-glow hover:bg-green-600 hover:text-white transition"
