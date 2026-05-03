@@ -1,10 +1,11 @@
 import fs from "fs";
 import path from "path";
-import HeroSection from "@/components/HeroSection";
 import ShopGrid from "@/components/ShopGrid";
+import HeroSection from "@/components/HeroSection";
 import ProductList from "@/components/ProductList";
 import AboutSection from "@/components/AboutSection";
 import AnimatedBalls from "@/components/AnimatedBalls";
+import FeaturedProducts from "@/components/FeaturedProducts";
 
 export default async function Home() {
   // Read banners
@@ -32,9 +33,9 @@ export default async function Home() {
           <ProductList category={null} />
         </section>
 
-        {/* About Section */}
+         {/* Featured Products */}
         <section id="about" className="flex items-center justify-center min-h-screen">
-          <AboutSection />
+          <FeaturedProducts products={products} />
         </section>
       </main>
     </div>
