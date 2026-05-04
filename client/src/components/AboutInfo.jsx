@@ -40,7 +40,7 @@ export default function Aboutinfo() {
         {/* Right: Info + Dropdowns */}
         <div className="flex flex-col justify-center space-y-6 h-full">
           <h2 className="text-3xl font-bold text-center md:text-left">
-            About Giddy Sports Hub
+            Giddy Sports Hub
           </h2>
           <p className="text-lg leading-relaxed text-center md:text-left">
             Giddy Sports Hub is your trusted destination for high-quality sports equipment at affordable wholesale prices. Based in Nairobi, Kenya, we serve athletes, teams, schools, and sports enthusiasts with reliable gear that enhances performance and passion for the game.
