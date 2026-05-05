@@ -9,18 +9,20 @@ import AnimatedBalls from "@/components/AnimatedBalls";
 import fs from "fs";
 import path from "path";
 
-// Fetch functions
+// API fetchers
 async function fetchProducts() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, { cache: "no-store" });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/product`, { cache: "no-store" });
   return res.json();
 }
 async function fetchCategories() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`, { cache: "no-store" });
-  return res.json();
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/product`, { cache: "no-store" });
+  const products = await res.json();
+  return [...new Set(products.map((p) => p.category))];
 }
 async function fetchFeatured() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/featured`, { cache: "no-store" });
-  return res.json();
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/product`, { cache: "no-store" });
+  const products = await res.json();
+  return products.filter((p) => p.featured === true);
 }
 
 export default async function Home() {
