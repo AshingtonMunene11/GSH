@@ -1,15 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useProducts } from "@/hooks/useProducts";
 import ShopCard from "./ShopCard";
 
-export default function ShopGrid({ products }) {
-  const [shuffled, setShuffled] = useState(products);
+export default function ShopGrid() {
+  const { data: products, isLoading, error } = useProducts();
+  const [shuffled, setShuffled] = useState([]);
   const [direction, setDirection] = useState("reverse"); // default: left→right
 
   useEffect(() => {
-    setShuffled([...products].sort(() => 0.5 - Math.random()));
+    if (products) {
+      setShuffled([...products].sort(() => 0.5 - Math.random()));
+    }
   }, [products]);
+
+  if (isLoading) return <div>Loading products...</div>;
+  if (error) return <div>Failed to load products</div>;
+  if (!products) return null;
 
   return (
     <section className="mt-8 w-full mb-16 overflow-hidden relative">
@@ -17,7 +25,6 @@ export default function ShopGrid({ products }) {
       <div className="flex justify-between items-center mb-6 px-2">
         <h2 className="text-2xl font-bold text-gray-700">Products</h2>
         <div className="flex gap-3">
-          {/* Left button */}
           <button
             onClick={() => setDirection("normal")}
             className="w-10 h-10 flex items-center justify-center rounded-full 
@@ -29,8 +36,6 @@ export default function ShopGrid({ products }) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-
-          {/* Right button */}
           <button
             onClick={() => setDirection("reverse")}
             className="w-10 h-10 flex items-center justify-center rounded-full 

@@ -1,19 +1,26 @@
-"use client";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
+import ReactQueryProvider from "@/components/ReactQueryProvider";
+import CategoryPage from "@/components/CategoryPage"; // client component using useProducts
 
-import { useParams } from "next/navigation";
-import ProductList from "@/components/ProductList"; 
-
-export default function CategoryPage() {
-  const { category } = useParams();
-
-  return (
-    <section className="p-6">
-      <h1 className="text-2xl font-bold mb-4">{category}</h1>
-      <ProductList category={category} />
-    </section>
-  );
+async function fetchProducts() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, { cache: "no-store" });
+  return res.json();
 }
 
+export default async function CategoryRoute({ params }) {
+  const queryClient = new QueryClient();
+
+  // Prefetch products once on the server
+  await queryClient.prefetchQuery({ queryKey: ["products"], queryFn: fetchProducts });
+
+  const dehydratedState = dehydrate(queryClient);
+
+  return (
+    <ReactQueryProvider dehydratedState={dehydratedState}>
+      <CategoryPage />
+    </ReactQueryProvider>
+  );
+}
 
 
 
