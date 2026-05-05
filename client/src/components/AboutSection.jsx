@@ -4,65 +4,39 @@ import { useEffect, useState } from "react";
 
 export default function AboutSection() {
   const cards = [
-    {
-      title: "Premium Gear & Apparel",
-      text: "Top‑quality sportswear and equipment for every athlete, designed to elevate your game."
-    },
-    {
-      title: "Community & Passion",
-      text: "Connecting enthusiasts through events, training, and shared love for sports."
-    },
-    {
-      title: "Innovation & Style",
-      text: "Blending performance with modern design, inspiring athletes on and off the field."
-    }
+    { title: "Premium Gear & Apparel", text: "Top‑quality sportswear and equipment for every athlete, designed to elevate your game." },
+    { title: "Community & Passion", text: "Connecting enthusiasts through events, training, and shared love for sports." },
+    { title: "Innovation & Style", text: "Blending performance with modern design, inspiring athletes on and off the field." }
   ];
 
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextCard();
-    }, 7000);
+    const interval = setInterval(() => nextCard(), 7000);
     return () => clearInterval(interval);
   }, []);
 
-  const nextCard = () => {
-    setCurrent((prev) => (prev + 1) % cards.length);
-  };
-
-  const prevCard = () => {
-    setCurrent((prev) => (prev - 1 + cards.length) % cards.length);
-  };
+  const nextCard = () => setCurrent((prev) => (prev + 1) % cards.length);
+  const prevCard = () => setCurrent((prev) => (prev - 1 + cards.length) % cards.length);
 
   return (
-    <section
-      id="about"
-      className="flex justify-center items-center min-h-[400px] bg-gray-100 py-6 px-4 mb-12"
-    >
+    <section id="about" className="flex justify-center items-center min-h-[400px] bg-gray-100 py-6 px-4 mb-12">
       <div className="relative w-full max-w-md h-[220px] sm:h-[250px] flex justify-center items-center">
         {cards.map((card, index) => {
           const position = (index - current + cards.length) % cards.length;
-
-          let classes =
-            "absolute w-full h-full rounded-xl shadow-2xl flex flex-col justify-center items-center transition-all duration-1000 ease-in-out px-4";
+          let classes = "absolute w-full h-full rounded-xl shadow-2xl flex flex-col justify-center items-center transition-all duration-1000 ease-in-out px-4";
 
           if (position === 0) {
-            classes +=
-              " bg-white text-green-700 z-20 scale-105 animate-zoom-tilt animate-fade";
+            classes += " bg-white text-green-700 z-20 scale-105 animate-zoom-tilt animate-fade";
           } else if (position === 1) {
-            classes +=
-              " bg-[#126936] text-white blur-[1px] opacity-80 translate-x-6 rotate-3 z-10 scale-95 animate-fade";
+            classes += " bg-[#126936] text-white blur-[1px] opacity-80 translate-x-6 rotate-3 z-10 scale-95 animate-fade";
           } else {
-            classes +=
-              " bg-[#f4821f] text-white blur-[1px] opacity-80 -translate-x-6 -rotate-3 z-10 scale-95 animate-fade";
+            classes += " bg-[#f4821f] text-white blur-[1px] opacity-80 -translate-x-6 -rotate-3 z-10 scale-95 animate-fade";
           }
 
           return (
             <div key={index} className={classes}>
-              <h2 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-center">
-                {card.title}
-              </h2>
+              <h2 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-center">{card.title}</h2>
               <p className="text-sm sm:text-base text-center">{card.text}</p>
             </div>
           );
@@ -71,13 +45,13 @@ export default function AboutSection() {
         {/* Navigation buttons */}
         <button
           onClick={prevCard}
-          className="absolute left-2 sm:-left-14 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white text-green-700 shadow-lg animate-float animate-glow hover:bg-green-600 hover:text-white transition"
+          className="absolute left-2 md:-left-14 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-white text-green-700 shadow-lg animate-float animate-glow hover:bg-green-600 hover:text-white transition"
         >
           ‹
         </button>
         <button
           onClick={nextCard}
-          className="absolute right-2 sm:-right-14 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white text-green-700 shadow-lg animate-float animate-glow hover:bg-green-600 hover:text-white transition"
+          className="absolute right-2 md:-right-14 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-white text-green-700 shadow-lg animate-float animate-glow hover:bg-green-600 hover:text-white transition"
         >
           ›
         </button>
@@ -110,6 +84,7 @@ export default function AboutSection() {
     </section>
   );
 }
+
 
 // "use client";
 
