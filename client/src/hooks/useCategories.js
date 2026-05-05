@@ -2,16 +2,20 @@
 import { useQuery } from "@tanstack/react-query";
 
 async function fetchCategories() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
-  if (!res.ok) throw new Error("Failed to fetch categories");
-  return res.json();
+  const res = await fetch("/api/product"); // fetch all products
+  if (!res.ok) throw new Error("Failed to fetch products");
+  const products = await res.json();
+
+  // Extract unique categories
+  const categories = [...new Set(products.map((p) => p.category))];
+  return categories;
 }
 
 export function useCategories() {
   return useQuery({
     queryKey: ["categories"],
     queryFn: fetchCategories,
-    staleTime: 10 * 60 * 1000, // cache for 10 minutes
+    staleTime: 10 * 60 * 1000,
     refetchOnWindowFocus: false,
   });
 }

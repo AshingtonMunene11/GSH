@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 async function fetchProducts() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`);
+  const res = await fetch("/api/product"); // calls your new API route
   if (!res.ok) throw new Error("Failed to fetch products");
   return res.json();
 }
