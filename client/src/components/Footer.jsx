@@ -9,8 +9,8 @@ export default function Footer() {
         {/* Responsive grid: stack on mobile, 4 columns on desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center md:text-left">
           
-          {/* Logo */}
-          <div className="flex flex-col items-center md:items-start">
+          {/* Logo (hidden on small screens) */}
+          <div className="hidden md:flex flex-col items-center md:items-start">
             <Image
               src="/GiddySportsLogoWithoutBg.png"
               alt="Giddy Sports Hub Logo"
@@ -21,9 +21,9 @@ export default function Footer() {
           </div>
 
           {/* Quicklinks */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h3 className="font-semibold mb-3 hover:text-[#f4821f]">Quicklinks</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-left">
               <li><Link href="/privacy" className="text-gray-200 hover:text-[#f4821f]">Privacy Policy</Link></li>
               <li><Link href="/cookies" className="text-gray-200 hover:text-[#f4821f]">Cookies Policy</Link></li>
               <li><Link href="/best-sellers" className="text-gray-200 hover:text-[#f4821f]">Best Sellers</Link></li>
@@ -32,9 +32,9 @@ export default function Footer() {
           </div>
 
           {/* About */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h3 className="font-semibold mb-3 hover:text-[#f4821f]">Giddy Sports Hub</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-left">
               <li><Link href="/about" className="text-gray-200 hover:text-[#f4821f]">About Us</Link></li>
               <li><Link href="/contact" className="text-gray-200 hover:text-[#f4821f]">Contact</Link></li>
             </ul>
@@ -62,7 +62,6 @@ export default function Footer() {
     </footer>
   );
 }
-
 
 // import Link from "next/link";
 // import Image from "next/image";
