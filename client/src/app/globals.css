@@ -74,3 +74,28 @@ body {
 html {
   scroll-behavior: smooth;
 } 
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; 
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
+@keyframes shopgrid-marquee {
+  from { transform: translateX(0%); }
+  to   { transform: translateX(-50%); }
+}
+
+.shopgrid-marquee {
+  display: inline-flex;
+  width: max-content;
+  animation: shopgrid-marquee var(--marquee-speed, 200s) linear infinite;
+  animation-direction: var(--marquee-direction, reverse);
+  animation-play-state: var(--marquee-play, running);
+  transition: transform 1s ease-in-out; /* smooth easing when flipping */
+}
+
+.shopgrid-marquee:hover {
+  animation-play-state: paused;
+}
