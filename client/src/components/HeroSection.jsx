@@ -25,15 +25,14 @@ export default function HeroSection({ banners }) {
     banners[0],
   ];
 
-  // Fetch categories + subcategories
+  // Fetch categories
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`, { cache: "no-store" });
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/product`, { cache: "no-store" });
         if (!res.ok) throw new Error("Failed to fetch products");
 
         const products = await res.json();
-
         const grouped = {};
         products.forEach(p => {
           if (!grouped[p.category]) grouped[p.category] = new Set();
@@ -82,69 +81,85 @@ export default function HeroSection({ banners }) {
   }, [current, extendedBanners.length]);
 
   return (
-    <section className="flex w-full mt-5 gap-4 px-4 flex-col md:flex-row h-[400px] relative">
-      {/* Categories Sidebar */}
-      <aside className="md:w-1/4 w-full bg-gradient-to-br from-[#126936] to-[#0f4d28] rounded-lg p-4 flex flex-col h-full relative">
-        <h2 className="font-bold text-white flex-shrink-0 pb-2 border-b border-white/40">
+    <section className="flex flex-col md:flex-row w-full mt-5 gap-4 px-4 h-auto md:h-[400px] relative">
+      
+      {/* Categories Sidebar (Desktop) */}
+      <aside className="hidden md:flex md:w-1/4 bg-gradient-to-br from-[#126936] to-[#0f4d28] rounded-lg p-4 flex-col h-full relative">
+        <h2 className="font-bold text-white pb-2 border-b border-white/40">
           Product Categories
         </h2>
-        <div className="flex flex-col gap-2 overflow-y-auto mt-2 custom-scrollbar relative">
-          {Object.keys(categories).length === 0 ? (
-            <p className="text-white/70">Loading categories...</p>
-          ) : (
-            Object.keys(categories).map((cat, i) => (
-              <div
-                key={i}
-                className="relative group"
-                onMouseEnter={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  setOverlayCategory(cat);
-                  setOverlayTop(rect.top + window.scrollY);
-                }}
-                onMouseLeave={() => setOverlayCategory(null)}
-              >
-                {/* ✅ Category button navigates to /product/[category] */}
-                <Link href={`/product/${slugify(cat)}`}>
-                  <button
-                    className="w-full text-left px-3 py-2 rounded text-white hover:bg-[#f4821f] transition-colors cursor-pointer"
-                  >
-                    {cat}
-                  </button>
-                </Link>
+        <div className="flex flex-col gap-2 overflow-y-auto mt-2 custom-scrollbar">
+          {Object.keys(categories).map((cat, i) => (
+            <div
+              key={i}
+              className="relative group"
+              onMouseEnter={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                setOverlayCategory(cat);
+                setOverlayTop(rect.top + window.scrollY);
+              }}
+              onMouseLeave={() => setOverlayCategory(null)}
+            >
+              <Link href={`/product/${slugify(cat)}`}>
+                <button className="w-full text-left px-3 py-2 rounded text-white hover:bg-[#f4821f] transition-colors">
+                  {cat}
+                </button>
+              </Link>
 
-                {/* Floating Sub‑Category Panel */}
-                {overlayCategory === cat && (
-                  <div
-                    className="fixed left-[25%] bg-[#f4821f]/40 backdrop-blur-sm rounded-lg shadow-lg p-3 w-64 z-50"
-                    style={{ top: overlayTop }}
-                    onMouseEnter={() => setOverlayCategory(cat)}   // ✅ keep open while hovering panel
-                    onMouseLeave={() => setOverlayCategory(null)} // ✅ close only when leaving both
-                  >
-                    <div
-                      className={`flex flex-col gap-2 ${
-                        categories[overlayCategory].length > 4 ? "max-h-40 overflow-y-auto custom-scrollbar" : ""
-                      }`}
-                    >
-                      {categories[overlayCategory].map((sub, j) => (
-                        <Link
-                          key={j}
-                          href={`/product/${slugify(cat)}/${slugify(sub)}`} // ✅ no extra slash
-                          className="px-3 py-2 rounded text-black hover:bg-white/20 transition-colors"
-                        >
-                          {sub}
-                        </Link>
-                      ))}
-                    </div>
+              {overlayCategory === cat && (
+                <div
+                  className="fixed left-[25%] bg-[#f4821f]/40 backdrop-blur-sm rounded-lg shadow-lg p-3 w-64 z-50"
+                  style={{ top: overlayTop }}
+                  onMouseEnter={() => setOverlayCategory(cat)}
+                  onMouseLeave={() => setOverlayCategory(null)}
+                >
+                  <div className={`flex flex-col gap-2 ${
+                    categories[overlayCategory].length > 4 ? "max-h-40 overflow-y-auto custom-scrollbar" : ""
+                  }`}>
+                    {categories[overlayCategory].map((sub, j) => (
+                      <Link
+                        key={j}
+                        href={`/product/${slugify(cat)}/${slugify(sub)}`}
+                        className="px-3 py-2 rounded text-black hover:bg-white/20 transition-colors"
+                      >
+                        {sub}
+                      </Link>
+                    ))}
                   </div>
-                )}
-              </div>
-            ))
-          )}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </aside>
 
+      {/* Categories Accordion (Mobile) */}
+      <div className="md:hidden flex flex-col gap-2 bg-gradient-to-br from-[#126936] to-[#0f4d28] rounded-lg p-4">
+        <h2 className="font-bold text-white pb-2 border-b border-white/40">
+          Product Categories
+        </h2>
+        {Object.keys(categories).map((cat, i) => (
+          <details key={i} className="bg-[#126936]/60 rounded-lg">
+            <summary className="px-3 py-2 text-white cursor-pointer">
+              {cat}
+            </summary>
+            <div className="flex flex-col gap-1 px-3 pb-2">
+              {categories[cat].map((sub, j) => (
+                <Link
+                  key={j}
+                  href={`/product/${slugify(cat)}/${slugify(sub)}`}
+                  className="text-white/80 hover:text-white"
+                >
+                  {sub}
+                </Link>
+              ))}
+            </div>
+          </details>
+        ))}
+      </div>
+
       {/* Banner Section */}
-      <div className="md:w-3/4 w-full relative bg-gray-100 rounded-lg h-full overflow-hidden">
+      <div className="md:w-3/4 w-full relative bg-gray-100 rounded-lg h-[200px] md:h-full overflow-hidden">
         <div
           className={`flex w-full h-full ${
             transitioning ? "transition-transform duration-1000 ease-in-out" : ""
@@ -156,13 +171,13 @@ export default function HeroSection({ banners }) {
               key={index}
               className="w-full flex-shrink-0 h-full relative rounded-lg overflow-hidden"
             >
-              {/* ✅ Banner links to category instead of generic /products */}
               <Link href={`/product/${slugify(banner.category || "team-sports")}`}>
                 <Image
-                  src={banner.src || banner} // if banners array is just URLs, use banner directly
+                  src={banner.src || banner}
                   alt={`Banner ${index}`}
                   fill
                   className="object-cover rounded-lg transform transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 75vw"
                 />
               </Link>
             </div>
